@@ -1,6 +1,6 @@
 import kaplay from "kaplay";
 import kaplay_canvas from "../header";
-import {owlet}from "../entities/owlet-monster"
+import {makeOwlet}from "../entities/owlet-monster"
 
 export default function mainMenu(){
     if(!kaplay_canvas.getData("best-score")) 
