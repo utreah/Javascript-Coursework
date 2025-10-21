@@ -10,33 +10,26 @@ import game from "./scenes/game"
 //kaplay_canvas.loadSprite("owlet-monster", "assets/Owlet_Monster.png");
 
 // Loading player(actor) pixel arts
-kaplay_canvas.loadSprite("owlet-monster", "assets/Owlet_Monster_Run_6.png", {
+kaplay_canvas.loadSprite("owlet-monster", "assets/test.png", {
     sliceX: 6,
-    sliceY: 1,
+    sliceY: 4,
     anims: {
         run: {
-            from: 0, to: 5, loop: true, speed: 15, 
-        }
-    }
-});
-kaplay_canvas.loadSprite("owlet-monster-jump", "assets/Owlet_Monster_Jump_8.png", {
-    sliceX: 8,
-    sliceY: 1,
-    anims: {
+            from:6, to:11, loop: true, speed: 15,
+        },
         jump: {
-            from: 0, to: 7, loop: true, speed: 50
+            from: 0, to: 5, loop: true, speed: 15, 
+        },
+        run_dust: {
+            from: 12, to: 17, loop: true, speed:15,
+        },
+        jump_dust: {
+            from: 18, to: 22, loop: true, speed: 15,
         }
     }
 });
-kaplay_canvas.loadSprite("owlet-monster-run-dust", "assets/Walk_Run_Push_Dust_6.png", {
-    sliceX: 6,
-    sliceY: 1,
-    anims: {
-        run: {
-            from: 0, to: 5, loop: true, speed: 10,
-        }
-    }
-})
+
+
 // Loading obstacle
 kaplay_canvas.loadSprite("pillar", "assets/pillar.png", {
     sliceX: 1,
