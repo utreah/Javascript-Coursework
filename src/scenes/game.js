@@ -52,17 +52,7 @@ export default function game(){
     let gameSpeed = 200;
     kaplay_canvas.loop(1, () => {
         gameSpeed += 5;
-        kaplay_canvas.add([
-            kaplay_canvas.sprite("pillar"),
-            kaplay_canvas.scale(),
-            kaplay_canvas.pos(400, 215),
-            //kaplay_canvas.area(),
-            //kaplay_canvas.body(),
-            kaplay_canvas.outline(),
-            kaplay_canvas.move(kaplay_canvas.vec2(-1, 0), gameSpeed - 20),
-            kaplay_canvas.body({isStatic: true})
-
-        ])
+        const pillar = createPillar([400, 215], gameSpeed);
     });
     kaplay_canvas.onUpdate(() => {
         for(const layer of layers){
