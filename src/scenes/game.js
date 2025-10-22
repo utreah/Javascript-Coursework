@@ -66,22 +66,19 @@ export default function game(){
     kaplay_canvas.loop(1, () => { 
         if(score != 0)
             gameSpeed += 20;    
-        console.log("Gamespeed: " + gameSpeed);
         const pillar = createPillar([IMAGE_WIDTH - 100, 215], gameSpeed);
         pillar.setEvents();
         pillar.onExitScreen(() => {
             score += 100;
             kaplay_canvas.setData("score", score);
-            console.log(score);
         })
     });
-
-    kaplay_canvas.onUpdate(() => {
-        for(const layer of layers){
-            if(layer.parts[1].pos.x < 0){
-                layer.parts[0].moveTo(layer.parts[1].pos.x + IMAGE_WIDTH, 0);
-                layer.parts.push(layer.parts.shift());
-             }
+kaplay_canvas.onUpdate(() => {
+    for(const layer of layers){
+        if(layer.parts[1].pos.x < 0){
+            layer.parts[0].moveTo(layer.parts[1].pos.x + IMAGE_WIDTH, 0);
+            layer.parts.push(layer.parts.shift());
+        }
         layer.parts[0].move(-100, 0);
         layer.parts[1].moveTo(layer.parts[0].pos.x + IMAGE_WIDTH - 230, 0);
     }
