@@ -7,6 +7,7 @@
 import kaplay_canvas from "./header";
 import mainMenu from "./scenes/mainMenu";
 import game from "./scenes/game"
+import endGame from "./scenes/gameover"
 //kaplay_canvas.loadSprite("owlet-monster", "assets/Owlet_Monster.png");
 
 // Loading player(actor) pixel arts
@@ -40,17 +41,13 @@ kaplay_canvas.loadSprite("sky", "assets/1.png");
 kaplay_canvas.loadSprite("clouds", "assets/2.png");
 kaplay_canvas.loadSprite("far-field", "assets/3.png");
 kaplay_canvas.loadSprite("near-field", "assets/4.png");
-
+kaplay_canvas.loadFont("slkscr", "font/slkscr.ttf");
 kaplay_canvas.scene("main-menu", mainMenu);
 kaplay_canvas.scene("game", game);
-kaplay_canvas.scene("end-game", () => {});
+kaplay_canvas.scene("end-game", endGame);
 
 // Wait for everything to load before running the first scene
 kaplay_canvas.onLoad(() => {
     kaplay_canvas.go("main-menu");
 });
 
-
-kaplay_canvas.scene("end-game", () => {
-    
-});  

@@ -1,11 +1,10 @@
 import kaplay from "kaplay"
 
-
 const kaplay_canvas = kaplay({
     width: 576,
     height: 324,
     letterbox: true,
-    background: [255, 255, 255],
+    background: [0, 0, 0],
     global: false,
     buttons: {
         jump: {
@@ -15,6 +14,7 @@ const kaplay_canvas = kaplay({
     debugKey: "d",
     debug: true,
 });
+kaplay_canvas.loadFont("slkscr", "/font/slkscr.ttf");
 export default kaplay_canvas;
 /* Reason behing why we export the function as 'default' is if I hadnt
 export it as default I would have to use {} to include the function in my main.js
