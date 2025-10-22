@@ -5,7 +5,7 @@ export function makeOwlet(pos){
     const owlet = kaplay_canvas.add([
         kaplay_canvas.sprite("owlet-monster", {anim: "run"}),
         kaplay_canvas.scale(1.4),
-        kaplay_canvas.area(),
+        kaplay_canvas.area({shape: new kaplay_canvas.Rect(kaplay_canvas.vec2(8, -5), 20, 25)}),
         kaplay_canvas.anchor("botleft"),
         kaplay_canvas.pos(pos),
         kaplay_canvas.body({jumpForce: 1000}),
