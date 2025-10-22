@@ -74,5 +74,5 @@ export default function game(){
         platforms[1].moveTo(platforms[0].pos.x + platforms[1].width, 0);
 
     })
-    //kaplay_canvas.add([kaplay_canvas.sprite("owlet-monster"), kaplay_canvas.pos(100, 276)], kaplay_canvas.rotate(1000));
+    
 }
