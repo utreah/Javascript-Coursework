@@ -3,11 +3,9 @@ import kaplay_canvas from "../header";
 import {makeOwlet}from "../entities/owlet-monster"
 
 export default function mainMenu(){
-    if(!kaplay_canvas.getData("best-score")) 
-        kaplay_canvas.setData("best-score", 0);
     kaplay_canvas.onButtonPress("jump", () => kaplay_canvas.go("game")); 
 
-    const bgPieceWidth = 576;
+    const bgPieceWidth = 800;
     const bgPieces = [
         kaplay_canvas.add([
             kaplay_canvas.sprite("sky"),
@@ -26,7 +24,7 @@ export default function mainMenu(){
             speed: -25,
             parts: [
                 kaplay_canvas.add([kaplay_canvas.sprite("clouds"), kaplay_canvas.pos(0, 0)]),
-                kaplay_canvas.add([kaplay_canvas.sprite("clouds"), kaplay_canvas.pos(bgPieceWidth, 0)])
+                kaplay_canvas.add([kaplay_canvas.sprite("clouds"), kaplay_canvas.pos(bgPieceWidth - 225, 0)])
             ],
         }
     ]
