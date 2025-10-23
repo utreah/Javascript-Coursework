@@ -18,7 +18,8 @@ export function makeOwlet(pos){
                         this.play("jump");
                         this.jump(); 
                     }
-                    if(!this.isGrounded() && jump_counter < 2){
+                    if(!this.isGrounded() && jump_counter < 2){ // logic for double jump. If player is not grounded that means its not on a solid platform
+                        
                         jump_counter++;
                         this.play("jump");
                         this.jump();
@@ -31,7 +32,7 @@ export function makeOwlet(pos){
                 });
             },
         },
-        "owlet-monster"
+        "owlet-monster" // owlet-monster is a tag. We can use tags on certain functions
     ]);
     return owlet;
 }

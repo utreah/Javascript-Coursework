@@ -14,13 +14,13 @@ const kaplay_canvas = kaplay({
     debugKey: "d",
     debug: true,
 });
-kaplay_canvas.loadFont("slkscr", "/font/slkscr.ttf");
 export default kaplay_canvas;
 /* Reason behing why we export the function as 'default' is if I hadnt
 export it as default I would have to use {} to include the function in my main.js
 with default keyword I can do it without curly brackets 
 
-
+The reason why this kaplay main body is in an another file is to block direct usage of global functions. By defining and exporting 
+the function now I have to use kaplay_canvas variable to call functions(to prevent wrong/unnecesary usage of function)
 import {k} from "./header.js" -> without default
 import k from "./header.js" -> with default
 */
