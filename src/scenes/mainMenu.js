@@ -33,7 +33,7 @@ export default function mainMenu(){
         kaplay_canvas.pos(kaplay_canvas.center()), 
         kaplay_canvas.anchor("center")
     ]);
-
+// this is for background. It moves the sky(blue) and clouds to left by layer.speed pixels each frame(which is 25 pixels to left each frame)
     kaplay_canvas.onUpdate(() => {
         for(const layer of layers){
             if(layer.parts[1].pos.x < 0){
