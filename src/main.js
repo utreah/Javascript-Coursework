@@ -2,6 +2,9 @@
     All animations are downloaded from;
     -https://free-game-assets.itch.io/free-tiny-hero-sprites-pixel-art
     -https://free-game-assets.itch.io/nature-landscapes-free-pixel-art
+
+    Github repo can be acceses form:
+    -https://github.com/utreah/Javascript-Coursework (repo is private until submission)
 */
 
 import kaplay_canvas from "./header";
