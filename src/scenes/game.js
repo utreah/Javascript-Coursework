@@ -1,4 +1,3 @@
-import kaplay from "kaplay";
 import kaplay_canvas from "../header"; 
 import { makeOwlet } from "../entities/owlet-monster"
 import { createPillar } from "../entities/pillar";
@@ -60,8 +59,11 @@ export default function game(){
     ])
     let score = 0;
     let score_text = kaplay_canvas.add([kaplay_canvas.text("Score: 0"), kaplay_canvas.pos(0, 0), {value: 0}, {font: "slkscr", size: 1000,}]);
-    if(kaplay_canvas.getData("score") != 0)
-        kaplay_canvas.setData("score", 0);
+
+    if(kaplay_canvas.getData("session-score") != 0)
+        kaplay_canvas.setData("session-score", 0);
+
+
     let gameSpeed = 200; // gamespeed variable to modify how fast the screen(layers and pillars) moves
     kaplay_canvas.loop(1, () => { 
         if(score != 0)
@@ -70,7 +72,7 @@ export default function game(){
         pillar.setEvents();
         pillar.onExitScreen(() => {
             score += 100;
-            kaplay_canvas.setData("score", score);
+            kaplay_canvas.setData("session-score", score);
             score_text.text = "Score: " + score;
         })
     });
