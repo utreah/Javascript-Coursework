@@ -44,17 +44,8 @@ export default function mainMenu(){
             layer.parts[1].move(layer.speed, 0);
         }
     })
-    /*
-    const platforms = [
-        kaplay_canvas.add([
-            kaplay_canvas.sprite("near-field"),
-            kaplay_canvas.pos(576, -50),
-        ]),
-        kaplay_canvas.add([
-            kaplay_canvas.sprite("far-field"),
-            kaplay_canvas.pos(0, 0),
-        ])
-    ];
-    
-    */
+
+    kaplay_canvas.add([kaplay_canvas.text("Player: " + JSON.parse(localStorage.getItem("loggedUser")).username), {font: "slkscr"},
+        kaplay_canvas.pos(0, 10)
+    ])
 }
