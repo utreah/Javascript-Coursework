@@ -10,7 +10,23 @@
     gap: 20px;
     border-bottom: 2px solid #444;
 }
-
+#welMessage {
+    position: fixed;
+    text-align: center;
+    margin-top: 50px;
+}
+#formLogin{
+    position: fixed;
+    margin-top: 50px;
+}
+#buttonLogout{
+    position: fixed;
+    text-align: center;
+    margin-top: 100px;
+}
+.hidden{
+    display: none;
+}
 #game-container {
     position: relative;
     width: 100vw;
