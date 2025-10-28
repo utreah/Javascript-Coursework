@@ -3,15 +3,37 @@
   <head>
     <title>Homepage</title>
     <meta charset = "utf-8">
-    <link rel="stylesheet" href="styles.css">
   </head>
   <body>
     <div class="navbar">
       <a href="index.html">Home</a>
-      <a href="game.html">Play</a> 
-      <a href="register.html">Register</a> 
-      <a href="login.html">Login</a> 
+      <a href="game.html" id = "gameHref" style = "display: none">Play</a> 
+      <a href="register.html" id = "registerHref">Register</a> 
+      <a href="login.html" id = "loginHref">Login</a> 
       <a href="scoreboard.html">Scoreboard</a> 
     </div>
+    
+    <h1 id="welcomeMessage">Welcome!</h1>
+    <button id="buttonLogout" class="hidden" style = "display: none;">Logout</button>
+        <script>
+            var getUser = localStorage.getItem("loggedUser");
+            if(getUser == null){
+                document.getElementById("welcomeMessage").innerHTML = `You are not logged in. Please <a href = "login.html">Login HERE!`
+            }
+            else{
+                document.getElementById("welcomeMessage").innerHTML = `Welcome ${JSON.parse(getUser).username}`;
+                document.getElementById("registerHref").style.display = "none";
+                document.getElementById("loginHref").style.display = "none";
+                document.getElementById("buttonLogout").style.display = "inline";
+                document.getElementById("gameHref").style.display = "inline";
+            }
+            document.getElementById("buttonLogout").addEventListener("click", ()=>{
+              localStorage.removeItem("loggedUser");
+              document.getElementById("registerHref").style.display = "inline";
+              document.getElementById("loginHref").style.display = "inline";
+              document.getElementById("welcomeMessage").innerHTML = `You are not logged in.  Please <a href = "login.html">Login HERE!</a>`
+              document.getElementById("buttonLogout").style.display = "none";
+            })
+        </script>
   </body>
 </html>
