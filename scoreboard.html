@@ -1,18 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Scoreboard</title>
-    <meta charset = "utf-8">
-    <link rel="stylesheet" href="styles.css">
-  </head>
-  <body>
-    <div class="navbar">
-      
-      <a href="index.html">Home</a>
-      <a href="game.html">Play</a> 
-      <a href="register.html">Register</a> 
-      <a href="login.html">Login</a> 
-      <a href="scoreboard.html">Scoreboard</a> 
-    </div>
-  </body>
+<head>
+  <title>Scoreboard</title>
+  <meta charset="utf-8">
+</head>
+<body>
+
+  <div class="navbar">
+    <a href="index.html">Home</a>
+    <a href="game.html">Play</a>
+    <a href="scoreboard.html">Scoreboard</a>
+  </div>
+
+  <h1>Highest Scores</h1>
+
+  <table class="table table-striped">
+    <thead>
+      <tr class="bg-info">
+        <th>Rank</th>
+        <th>Username</th>
+        <th>Score</th>
+      </tr>
+    </thead>
+    <tbody id="userTable">
+      <!-- JS will insert rows here -->
+    </tbody>
+  </table>
+
+  <script src="./document1/scoreboard.js"></script>
+
+</body>
 </html>
