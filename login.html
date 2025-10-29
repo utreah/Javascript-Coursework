@@ -12,19 +12,31 @@
       <a href="login.html">[ Login ]</a> 
       <a href="scoreboard.html">Scoreboard</a> 
     </div>
+
+
+
     <div class="loginSection">
-    <h1>You don't have an account? <a href = "register.html">Register HERE!</a> </h1>
       <form id = "loginForm">
-        <h1>Login</h1>
-        <label for="loginUsername">Username </label>
-        <input type = "text" id = "loginUsername"  placeHolder = "Username">
-        <br>
-        <label for="loginPassword">Password </label>
-        <input type = "password" id = "loginPassword"  placeHolder = "Password">
+        <h2>Login</h2>
+        <div>
+          <span class="icon"><ion-icon name="person-sharp"></ion-icon></span>
+          <input type = "text" id = "loginUsername"  placeHolder = "Username">
+        </div>
+        <div>
+          <span class="icon"><ion-icon name="lock-closed-sharp"></ion-icon></span>
+          <input type = "password" id = "loginPassword"  placeHolder = "Password">
+        </div>
+        <button id = "loginButton">Login</button>
+        <div class="no-account">
+        <a>You don't have an account?<a href="register.html"> Create an Account!</a></a>
+        </div>
+        <div class="login-message">
+          <a id = "loginMessage"></a>
+        </div>
       </form>
-      <button id = "loginButton">Login</button>
-      <a id = "loginMessage"></a>
     </div>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
       <script src = "./website/login.js"></script>
   </body>
 </html>

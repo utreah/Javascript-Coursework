@@ -2,39 +2,89 @@
 <html lang="en">
   <head>
     <title>Homepage</title>
-    <meta charset = "utf-8">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./website/styles.css">
+    <style>
+      /* Simple home-page specific style */
+      body {
+        font-family: Arial, sans-serif;
+        background-color: lightblue;
+        color: #fff;
+        margin: 0;
+        text-align: center;
+      }
+
+      .content {
+        margin-top: 120px;
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        color: #00bcd4;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+      }
+
+      a {
+        color: #00bcd4;
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      #buttonLogout {
+        background-color: #00bcd4;
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        font-size: 1rem;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      #buttonLogout:hover {
+        background-color: #0097a7;
+      }
+    </style>
   </head>
   <body>
     <div class="navbar">
       <a href="index.html">[ Home ]</a>
-      <a href="game.html" id = "gameHref" style = "display: none">Play</a> 
-      <a href="register.html" id = "registerHref">Register</a> 
-      <a href="login.html" id = "loginHref">Login</a> 
+      <a href="game.html" id="gameHref" style="display: none">Play</a> 
+      <a href="register.html" id="registerHref">Register</a> 
+      <a href="login.html" id="loginHref">Login</a> 
       <a href="scoreboard.html">Scoreboard</a> 
     </div>
     
-    <h1 id="welcomeMessage">Welcome!</h1>
-    <button id="buttonLogout" class="hidden" style = "display: none;">Logout</button>
-        <script>
-            var getUser = localStorage.getItem("loggedUser");
-            if(getUser == null){
-                document.getElementById("welcomeMessage").innerHTML = `You are not logged in. Please <a href = "login.html">Login HERE!`
-            }
-            else{
-                document.getElementById("welcomeMessage").innerHTML = `Welcome ${JSON.parse(getUser).username}`;
-                document.getElementById("registerHref").style.display = "none";
-                document.getElementById("loginHref").style.display = "none";
-                document.getElementById("buttonLogout").style.display = "inline";
-                document.getElementById("gameHref").style.display = "inline";
-            }
-            document.getElementById("buttonLogout").addEventListener("click", ()=>{
-              localStorage.removeItem("loggedUser");
-              document.getElementById("registerHref").style.display = "inline";
-              document.getElementById("loginHref").style.display = "inline";
-              document.getElementById("welcomeMessage").innerHTML = `You are not logged in.  Please <a href = "login.html">Login HERE!</a>`
-              document.getElementById("buttonLogout").style.display = "none";
-              document.getElementById("gameHref").style.display =  "none";
-            })
-        </script>
+    <div class="content">
+      <h1 id="welcomeMessage">Welcome!</h1>
+      <button id="buttonLogout" class="hidden" style="display: none;">Logout</button>
+    </div>
+
+    <script>
+      var getUser = localStorage.getItem("loggedUser");
+      if(getUser == null){
+          document.getElementById("welcomeMessage").innerHTML = `You are not logged in. Please <a href="login.html">Login HERE!</a>`;
+      }
+      else{
+          document.getElementById("welcomeMessage").innerHTML = `Welcome ${JSON.parse(getUser).username}`;
+          document.getElementById("registerHref").style.display = "none";
+          document.getElementById("loginHref").style.display = "none";
+          document.getElementById("buttonLogout").style.display = "inline";
+          document.getElementById("gameHref").style.display = "inline";
+      }
+      document.getElementById("buttonLogout").addEventListener("click", ()=>{
+        localStorage.removeItem("loggedUser");
+        document.getElementById("registerHref").style.display = "inline";
+        document.getElementById("loginHref").style.display = "inline";
+        document.getElementById("welcomeMessage").innerHTML = `You are not logged in. Please <a href="login.html">Login HERE!</a>`;
+        document.getElementById("buttonLogout").style.display = "none";
+        document.getElementById("gameHref").style.display =  "none";
+      });
+    </script>
   </body>
 </html>
