@@ -9,8 +9,11 @@ document.getElementById("loginButton").addEventListener("click", (event)=>{
     }
     let users = JSON.parse(localStorage.getItem("users"));
     if(!users){
-        document.getElementById("loginMessage").textContent = "No account has been found!";
+        document.getElementById("loginMessage").textContent = "No account has been found! Redirecting to Register page!";
         users = [];
+        setTimeout(() => {
+                window.location.href = "register.html";
+            }, 2000);
         return;
     }
     for(let i = 0; i < users.length; i++){
@@ -22,8 +25,21 @@ document.getElementById("loginButton").addEventListener("click", (event)=>{
             }, 2000);
             return;
         }
+        /*
+        else if(users[i].username !== username){
+            document.getElementById("loginMessage").textContent = "Username is wrong!";
+            return;
+        }
+        else if(users[i].password !== password){
+            document.getElementById("loginMessage").textContent = "Password is wrong!";
+            return;         
+        }
+        */
     }
 
-    if(!localStorage.getItem("loggedUser"))
-        document.getElementById("loginMessage").textContent = "Wrong username or password!";
+if(!localStorage.getItem("loggedUser")){
+    document.getElementById("loginMessage").textContent = "Wrong username or password!";   
+    return;
+}
+
 })
