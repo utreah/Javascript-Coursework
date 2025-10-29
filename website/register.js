@@ -2,6 +2,8 @@ document.getElementById("registerButton").addEventListener("click", (event)=>{
     event.preventDefault();
     const username = document.getElementById("usernameRegister").value;
     const password = document.getElementById("passwordRegister").value;
+    const phoneNumber = document.getElementById("phoneRegister").value;
+    const address = document.getElementById("addressRegister").value;
     if(!username || !password){
         document.getElementById("registerMessage").textContent = "Username/Password fields must be filled!";
         return; 
@@ -23,6 +25,8 @@ document.getElementById("registerButton").addEventListener("click", (event)=>{
         username: username,
         password: password,
         bestScore: 0,
+        phoneNumber: phoneNumber,
+        address: address,
     };
     document.getElementById("registerMessage").textContent = "Account created succesfully!"
     setTimeout(() => {
