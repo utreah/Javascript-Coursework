@@ -1,4 +1,5 @@
-document.getElementById("loginButton").addEventListener("click", ()=>{
+document.getElementById("loginButton").addEventListener("click", (event)=>{
+    event.preventDefault();
     const username = document.getElementById("loginUsername").value;
     const password = document.getElementById("loginPassword").value;
 
@@ -14,9 +15,12 @@ document.getElementById("loginButton").addEventListener("click", ()=>{
     }
     for(let i = 0; i < users.length; i++){
         if(users[i].username === username && users[i].password === password){
-            document.getElementById("loginMessage").textContent = "Login succesful!"
+            document.getElementById("loginMessage").textContent = "Login succesful! You are being redirected in 2 seconds!"
             localStorage.setItem("loggedUser", JSON.stringify(users[i]));
-            window.location.href = "index.html"
+            setTimeout(() => {
+                window.location.href = "index.html";
+            }, 2000);
+            return;
         }
     }
 

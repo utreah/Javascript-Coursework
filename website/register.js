@@ -1,4 +1,5 @@
-document.getElementById("registerButton").addEventListener("click", ()=>{
+document.getElementById("registerButton").addEventListener("click", (event)=>{
+    event.preventDefault();
     const username = document.getElementById("usernameRegister").value;
     const password = document.getElementById("passwordRegister").value;
     if(!username || !password){
@@ -23,8 +24,11 @@ document.getElementById("registerButton").addEventListener("click", ()=>{
         password: password,
         bestScore: 0,
     };
+    document.getElementById("registerMessage").textContent = "Account created succesfully!"
+    setTimeout(() => {
+        window.location.href = "login.html";
+    }, 2000);
     users.push(addNewUser);
     localStorage.setItem("users", JSON.stringify(users));
-    window.location.href = "login.html";
 });
 
