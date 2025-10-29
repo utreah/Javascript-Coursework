@@ -37,10 +37,54 @@
 }
 .registerSection,
 .loginSection {
-    padding-top: 50px;
     text-align: center;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 500px;
+    border: 5px solid #333;
+    border-radius: 10px;;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
 
 #registerAccountRedirection{
     padding-top: 100px;
 }
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #111;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  border-bottom: 2px solid #00bcd4;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+}
+
+.navbar a {
+  color: #ddd;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #00bcd4;
+}
+
