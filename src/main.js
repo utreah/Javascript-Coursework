@@ -14,7 +14,7 @@ import endGame from "./scenes/gameover"
 //kaplay_canvas.loadSprite("owlet-monster", "assets/Owlet_Monster.png");
 
 // Loading player(actor) pixel arts
-kaplay_canvas.loadSprite("owlet-monster", "assets/test.png", {
+kaplay_canvas.loadSprite("owlet-monster", "assets/owlet-monster.png", {
     sliceX: 6,
     sliceY: 4,
     anims: {
