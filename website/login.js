@@ -3,12 +3,12 @@ document.getElementById("loginButton").addEventListener("click", ()=>{
     const password = document.getElementById("loginPassword").value;
 
     if(!username || !password){
-        alert("Username/Password fields must be filled!");
+        document.getElementById("loginMessage").textContent = "Username/Password fields must be filled!";
         return;
     }
     let users = JSON.parse(localStorage.getItem("users"));
     if(!users){
-        alert("No account has  been found!");
+        document.getElementById("loginMessage").textContent = "No account has been found!";
         users = [];
         return;
     }
