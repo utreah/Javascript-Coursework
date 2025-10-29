@@ -1,3 +1,8 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 .navbar{
     position: fixed;        
     top: 100;
@@ -46,11 +51,6 @@
     height: 500px;
     border: 5px solid #333;
     border-radius: 10px;;
-}
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
 }
 body {
     display: flex;
