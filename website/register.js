@@ -26,6 +26,5 @@ document.getElementById("registerButton").addEventListener("click", ()=>{
     users.push(addNewUser);
     localStorage.setItem("users", JSON.stringify(users));
     window.location.href = "login.html";
-    console.log(users);
 });
 

@@ -1,5 +1,12 @@
 let users = JSON.parse(localStorage.getItem("users"));
-
+if(localStorage.getItem("loggedUser")){
+    document.getElementById("loginHref").style.display =  "none";
+    document.getElementById("registerHref").style.display =  "none";
+}
+else{
+    document.getElementById("loginHref").style.display =  "none";
+    document.getElementById("registerHref").style.display =  "none";
+}
 users.sort((user1, user2) => {
     return user2.bestScore - user1.bestScore;
 })
