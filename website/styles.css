@@ -35,3 +35,12 @@
     align-items: center;
     background-color: #000; 
 }
+.registerSection,
+.loginSection {
+    padding-top: 50px;
+    text-align: center;
+}
+
+#registerAccountRedirection{
+    padding-top: 100px;
+}

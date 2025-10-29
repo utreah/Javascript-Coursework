@@ -3,25 +3,28 @@
   <head>
     <title>Login</title>
     <meta charset = "utf-8">
+      <link rel="stylesheet" href="./website/styles.css">  
   </head>
   <body>
     <div class="navbar">
       <a href="index.html">Home</a>
       <a href="register.html">Register</a> 
-      <a href="login.html">Login</a> 
+      <a href="login.html">[ Login ]</a> 
       <a href="scoreboard.html">Scoreboard</a> 
     </div>
+    <div class="loginSection">
     <h1>You don't have an account? <a href = "register.html">Register HERE!</a> </h1>
       <form id = "loginForm">
-          <h1>Login</h1>
-          <label for="loginUsername">Username </label>
-          <input type = "text" id = "loginUsername"  placeHolder = "Username">
-          <br>
-          <label for="loginPassword">Password </label>
-          <input type = "password" id = "loginPassword"  placeHolder = "Password">
+        <h1>Login</h1>
+        <label for="loginUsername">Username </label>
+        <input type = "text" id = "loginUsername"  placeHolder = "Username">
+        <br>
+        <label for="loginPassword">Password </label>
+        <input type = "password" id = "loginPassword"  placeHolder = "Password">
       </form>
       <button id = "loginButton">Login</button>
       <a id = "loginMessage"></a>
+    </div>
       <script src = "./website/login.js"></script>
   </body>
 </html>

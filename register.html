@@ -3,6 +3,7 @@
   <head>
     <title>Register</title>
     <meta charset = "utf-8">
+    <link rel="stylesheet" href="./website/styles.css">
   </head>
   <body>
     <div class="navbar">
@@ -12,17 +13,20 @@
       <a href="login.html">Login</a> 
       <a href="scoreboard.html">Scoreboard</a> 
     </div>
-    <form id = "registerForm">
-      <h1>Register</h1>
-      <label for="usernameRegister">Username </label>
-      <input type = "text" placeholder="Username" id = "usernameRegister">
-      <br>
-      <label for="passwordRegister">Password </label>
-      <input type = "password" placeHolder="Password" id = "passwordRegister">
+    <div class="registerSection">
+
+      <form id = "registerForm">
+        <h1 id="registerHeader1">Register</h1>
+        <label for="usernameRegister">Username </label>
+        <input type = "text" placeholder="Username" id = "usernameRegister">
+        <br>
+        <label for="passwordRegister">Password </label>
+        <input type = "password" placeHolder="Password" id = "passwordRegister">
       </form>
       
       <button id = "registerButton">Register</button>
       <a id = "registerMessage"></a>
+      </div>
       <script src = "./website/register.js">
       </script>
   </body>
