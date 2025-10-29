@@ -4,8 +4,8 @@ if(localStorage.getItem("loggedUser")){
     document.getElementById("registerHref").style.display =  "none";
 }
 else{
-    document.getElementById("loginHref").style.display =  "none";
-    document.getElementById("registerHref").style.display =  "none";
+    document.getElementById("loginHref").style.display =  "inline";
+    document.getElementById("registerHref").style.display =  "inline";
 }
 users.sort((user1, user2) => {
     return user2.bestScore - user1.bestScore;
