@@ -58,7 +58,7 @@ export default function game(){
         "static-platform"
     ])
     let score = 0;
-    let score_text = kaplay_canvas.add([kaplay_canvas.text("Score: 0"), kaplay_canvas.pos(0, 0), {value: 0}, {font: "slkscr", size: 1000,}]);
+    let score_text = kaplay_canvas.add([kaplay_canvas.text("Score: 0"), kaplay_canvas.pos(0, 25), {value: 0}, {font: "slkscr", size: 1000,}]);
 
     if(kaplay_canvas.getData("session-score") != 0)
         kaplay_canvas.setData("session-score", 0);
@@ -97,8 +97,6 @@ kaplay_canvas.onUpdate(() => {
     // we use tags here to check if two entities are colliding. If there is a collision it compares best score and session-score 
     // if session-score is higher than best-score, it saves session-score as best score and changes scene to end-game scene.
     kaplay_canvas.onCollide("owlet-monster", "pillar", () =>{  
-        if(kaplay_canvas.getData("score") > kaplay_canvas.getData("best-score"))
-            kaplay_canvas.setData("best-score", score);
         kaplay_canvas.go("end-game", endGame);    
     })
 
